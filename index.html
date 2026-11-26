@@ -1,0 +1,17 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>True-scale graph paper PDFs (1/4 in, 5 mm, 1 cm)</title><meta name="description" content="Free vector graph paper PDFs that print at true scale, and the Python script that makes them."><style>body{font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;max-width:960px;margin:2rem auto;padding:0 1rem;color:#1b1f24}
+table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid #d0d7de;padding:4px 8px;text-align:left}th{background:#f6f8fa}
+code,pre{background:#f6f8fa;border-radius:4px}pre{padding:.8rem;overflow:auto}input,select,button{font:inherit;padding:4px 6px}
+.box{border:1px solid #d0d7de;border-radius:6px;padding:1rem;margin:1rem 0}footer{margin-top:3rem;font-size:14px;color:#57606a}</style></head><body>
+<h1>True-scale graph paper PDFs</h1>
+<p>A single-file Python script with no dependencies that writes vector graph paper whose squares measure what they say when printed at 100%.</p>
+<h2>Download the examples</h2><ul><li><a href="examples/quarter-inch-letter.pdf">1/4 inch grid, US Letter</a> (major line every 4 squares)</li><li><a href="examples/5mm-a4.pdf">5 mm grid, A4</a></li><li><a href="examples/1cm-letter.pdf">1 cm grid, US Letter</a></li></ul>
+<h2>Make your own</h2><pre>python3 graphpaper.py --square 0.25in --paper letter --major 4 -o quarter-inch-letter.pdf
+python3 graphpaper.py --square 5mm --paper a4 --major 2 -o 5mm-a4.pdf</pre>
+<h2>Why printed grids come out the wrong size</h2><ol><li><b>Fit to page.</b> Print dialogs often shrink the page to the printable area, so a 1/4 in grid prints a few percent small. Choose 100% / Actual size. These PDFs also set <code>/PrintScaling /None</code>.</li>
+<li><b>Raster images.</b> A PNG grid depends on its pixel density; vector lines in PDF points (72 pt = 1 in) do not.</li>
+<li><b>Clipped squares.</b> The script fits a whole number of squares inside the margin and centres the grid.</li></ol>
+<p>Check a print with a ruler: ten 1/4 in squares should measure 2.5 in, ten 5 mm squares 50 mm.</p>
+<p>Prefer the browser? <a href="https://paper-generator.com/">Paper Generator</a> makes true-scale graph and lined paper for Letter, A4 and Legal.</p>
+<footer>Source and license: <a href="https://github.com/zhangwenhao66/true-scale-graph-paper">github.com/zhangwenhao66/true-scale-graph-paper</a> · More projects: <a href="https://zhangwenhao66.github.io/">zhangwenhao66.github.io</a></footer>
+</body></html>
